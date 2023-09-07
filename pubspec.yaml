@@ -24,9 +24,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/splash/
+    - assets/images/splash/
+    - assets/images/
+    - assets/images/2x/
+    - assets/images/3x/
 flutter_native_splash:
   android: true
   ios: true
-  background_image: "assets/splash/splash-light.png"
-  background_image_dark: "assets/splash/splash-dark.png"
+  background_image: "assets/images/splash/splash-light.png"
+  background_image_dark: "assets/images/splash/splash-dark.png"
