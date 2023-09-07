@@ -26,8 +26,8 @@ flutter:
   assets:
     - assets/images/splash/
     - assets/images/
-    - assets/images/2x/
-    - assets/images/3x/
+    - assets/images/2.0x/
+    - assets/images/3.0x/
 flutter_native_splash:
   android: true
   ios: true
