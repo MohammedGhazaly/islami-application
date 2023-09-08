@@ -35,7 +35,6 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
     return Center(
       child: Column(
         children: [
-          Text("$tasbeehNumber"),
           const Spacer(
             flex: 2,
           ),
