@@ -14,17 +14,21 @@ class AppThemes {
           color: Colors.black,
         )),
     textTheme: const TextTheme(
-      headlineSmall: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.w700,
-        color: kDarkColor,
-      ),
-      bodySmall: TextStyle(
-        fontSize: 25,
-        fontWeight: FontWeight.w600,
-        color: kDarkColor,
-      ),
-    ),
+        headlineSmall: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.w700,
+          color: kDarkColor,
+        ),
+        bodySmall: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.w600,
+          color: kDarkColor,
+        ),
+        titleSmall: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+          color: kDarkColor,
+        )),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: kPrimaryLightColor,
       selectedItemColor: kDarkColor,

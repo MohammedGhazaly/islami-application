@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/models/sura_details.dart';
+import 'package:islami_app/screens/quran/sura_verses_item.dart';
 
 class SuraVerses extends StatefulWidget {
   static String routeName = "sura-verses";
@@ -16,6 +17,7 @@ class _SuraVersesState extends State<SuraVerses> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     var suraDetails = ModalRoute.of(context)!.settings.arguments as SuraDetails;
     if (suraContentList.isEmpty) {
       loadSura(suraDetails.suraNumber);
@@ -41,11 +43,32 @@ class _SuraVersesState extends State<SuraVerses> {
                   color: Theme.of(context).primaryColor,
                 ),
               )
-            : ListView.builder(
-                itemCount: suraContentList.length,
-                itemBuilder: (context, index) {
-                  return Text(suraContentList[index]);
-                },
+            : Container(
+                margin: EdgeInsets.symmetric(
+                    horizontal: size.width * 0.05,
+                    vertical: size.height * 0.05),
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(
+                    25,
+                  ),
+                ),
+                child: ListView.separated(
+                  separatorBuilder: (context, index) {
+                    return Divider(
+                      color: Theme.of(context).primaryColor,
+                      thickness: 2,
+                    );
+                  },
+                  itemCount: suraContentList.length,
+                  itemBuilder: (context, index) {
+                    return SuraVersesItem(
+                      suraVerse: suraContentList[index],
+                      verseNumber: index + 1,
+                    );
+                  },
+                ),
               ),
       ),
     );
