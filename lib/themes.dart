@@ -17,16 +17,21 @@ class AppThemes {
         fontWeight: FontWeight.w700,
         color: kDarkColor,
       ),
+      bodySmall: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
+        color: kDarkColor,
+      ),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: kPrimaryLightColor,
       selectedItemColor: kDarkColor,
       unselectedItemColor: kWhiteColor,
       selectedIconTheme: IconThemeData(
-        size: 28,
+        size: 32,
       ),
       unselectedIconTheme: IconThemeData(
-        size: 28,
+        size: 32,
       ),
     ),
   );

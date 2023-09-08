@@ -15,14 +15,15 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
-  List<Widget> screens = const [
-    RadioScreen(),
-    TasbeehScreen(),
-    HadithScreen(),
-    QuranScreen()
-  ];
+
   @override
   Widget build(BuildContext context) {
+    List<Widget> screens = const [
+      RadioScreen(),
+      TasbeehScreen(),
+      HadithScreen(),
+      QuranScreen()
+    ];
     return Container(
       constraints: const BoxConstraints.expand(),
       decoration: const BoxDecoration(
