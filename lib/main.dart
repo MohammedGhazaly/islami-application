@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => const HomeScreen(),
-        SuraVerses.routeName: (context) => const SuraVerses(),
+        SuraVerses.routeName: (context) => SuraVerses(),
       },
     );
   }
