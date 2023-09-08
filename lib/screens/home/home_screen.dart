@@ -18,6 +18,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    String appBarText = "Radio";
+    switch (selectedIndex) {
+      case 0:
+        appBarText = "Radio";
+        break;
+      case 1:
+        appBarText = "Tasbeeh";
+        break;
+      case 2:
+        appBarText = "Hadith";
+        break;
+      case 3:
+        appBarText = "Quran";
+        break;
+    }
     List<Widget> screens = const [
       RadioScreen(),
       TasbeehScreen(),
@@ -33,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Islami",
+            appBarText,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
         ),
