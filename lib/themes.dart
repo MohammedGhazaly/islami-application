@@ -7,10 +7,12 @@ class AppThemes {
     scaffoldBackgroundColor: Colors.transparent,
     useMaterial3: true,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.transparent,
-      centerTitle: true,
-      elevation: 0,
-    ),
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        )),
     textTheme: const TextTheme(
       headlineSmall: TextStyle(
         fontSize: 30,

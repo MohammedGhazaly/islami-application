@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/asset_data.dart';
+import 'package:islami_app/models/sura_details.dart';
 import 'package:islami_app/screens/quran/sura_name_widget.dart';
+import 'package:islami_app/screens/quran/sura_verses.dart';
 
 class QuranScreen extends StatelessWidget {
   const QuranScreen({super.key});
@@ -39,6 +41,11 @@ class QuranScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return SuraNameWidget(
                   suraName: suraNames[index],
+                  onTapFunction: () {
+                    Navigator.pushNamed(context, SuraVerses.routeName,
+                        arguments: SuraDetails(
+                            name: suraNames[index], suraNumber: index + 1));
+                  },
                 );
               },
             ),
