@@ -3,6 +3,7 @@ import 'package:islami_app/screens/hadith/hadith_screen.dart';
 import 'package:islami_app/screens/home/custom_navigation_bar.dart';
 import 'package:islami_app/screens/quran/quran_screen.dart';
 import 'package:islami_app/screens/radio/radio_screen.dart';
+import 'package:islami_app/screens/settings/settings_screen.dart';
 import 'package:islami_app/screens/tasbeeh/tasbeeh_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -33,12 +34,16 @@ class _HomeScreenState extends State<HomeScreen> {
       case 3:
         appBarText = AppLocalizations.of(context)!.quran;
         break;
+      case 4:
+        appBarText = AppLocalizations.of(context)!.settings;
+        break;
     }
     List<Widget> screens = const [
       RadioScreen(),
       TasbeehScreen(),
       HadithScreen(),
-      QuranScreen()
+      QuranScreen(),
+      SettingsScreen()
     ];
     return Container(
       constraints: const BoxConstraints.expand(),

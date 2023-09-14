@@ -25,10 +25,15 @@ BottomNavigationBar buildCustomNavigationBar(
           ),
           label: AppLocalizations.of(context)!.hadith),
       BottomNavigationBarItem(
-          icon: const ImageIcon(
-            AssetImage("assets/images/moshaf.png"),
-          ),
-          label: AppLocalizations.of(context)!.quran),
+        icon: const ImageIcon(
+          AssetImage("assets/images/moshaf.png"),
+        ),
+        label: AppLocalizations.of(context)!.quran,
+      ),
+      BottomNavigationBarItem(
+        icon: const Icon(Icons.settings),
+        label: AppLocalizations.of(context)!.settings,
+      ),
     ],
   );
 }

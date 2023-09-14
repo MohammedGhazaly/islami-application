@@ -5,5 +5,12 @@
 "sebha":"السبحه",
 "radio":"الراديو",
 "sura_name":"إسم السورة",
-"hadith_number":"رقم الحديث"
+"hadith_number":"رقم الحديث",
+"settings":"الاعدادات",
+"english":"اللغه الانجليزيه",
+"arabic":"اللغه العربيه",
+"light":"مضئ",
+"dark":"مظلم",
+"theme":"نمط البرنامج",
+"language":"اللغه"
 }

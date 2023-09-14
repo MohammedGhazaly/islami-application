@@ -5,5 +5,12 @@
 "sebha":"Sebha",
 "radio":"Radio",
 "sura_name":"Sura Name",
-"hadith_number":"Hadith Number"
+"hadith_number":"Hadith Number",
+"settings":"Settings",
+"english":"English",
+"arabic":"Arabic",
+"light":"Light",
+"dark":"Dark",
+"theme":"Themes",
+"language":"Language"
 }
