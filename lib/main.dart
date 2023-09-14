@@ -3,7 +3,9 @@ import 'package:islami_app/screens/home/home_screen.dart';
 import 'package:islami_app/screens/quran/sura_verses_screen.dart';
 import 'package:islami_app/themes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(const Duration(seconds: 4));
   runApp(const MyApp());
 }
 

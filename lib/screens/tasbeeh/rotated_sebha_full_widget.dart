@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-AnimatedRotation createAnimatedSebha(
+AnimatedRotation createAnimatedSebhaFull(
     {required double turns, required Function() onTapFunction}) {
   return AnimatedRotation(
     turns: turns,
@@ -10,8 +10,9 @@ AnimatedRotation createAnimatedSebha(
       splashColor: Colors.transparent,
       focusColor: Colors.transparent,
       hoverColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       child: Image.asset(
-        "assets/images/sebha_head_body.png",
+        "assets/images/sebha_full.png",
       ),
     ),
   );

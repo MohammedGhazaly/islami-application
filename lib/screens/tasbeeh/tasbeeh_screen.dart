@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/constants.dart';
-import 'package:islami_app/screens/tasbeeh/rotated_sebha_widget.dart';
+import 'package:islami_app/screens/tasbeeh/rotated_sebha_body_widget.dart';
+import 'package:islami_app/screens/tasbeeh/rotated_sebha_full_widget.dart';
 import 'package:islami_app/screens/tasbeeh/tasbeeh_number_widget.dart';
 import 'package:islami_app/screens/tasbeeh/tasbeeh_phase.dart';
 
@@ -36,17 +36,25 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
       child: Column(
         children: [
           const Spacer(
-            flex: 2,
+            flex: 5,
           ),
-          createAnimatedSebha(
-            turns: turns,
-            onTapFunction: () {
-              tasbeehNumber++;
-              setState(() {
-                turns += 1 / 33;
-              });
-            },
-          ),
+          // createAnimatedSebhaFull(
+          //   turns: turns,
+          //   onTapFunction: () {
+          //     tasbeehNumber++;
+          //     setState(() {
+          //       turns += 1 / 33;
+          //     });
+          //   },
+          // ),
+          createAnimatedSebhaBody(
+              turns: turns,
+              onTapFunction: () {
+                setState(() {
+                  tasbeehNumber++;
+                  turns += 1 / 33;
+                });
+              }),
           const Spacer(
             flex: 1,
           ),
