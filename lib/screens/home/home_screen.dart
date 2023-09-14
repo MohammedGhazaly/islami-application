@@ -4,6 +4,7 @@ import 'package:islami_app/screens/home/custom_navigation_bar.dart';
 import 'package:islami_app/screens/quran/quran_screen.dart';
 import 'package:islami_app/screens/radio/radio_screen.dart';
 import 'package:islami_app/screens/tasbeeh/tasbeeh_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName = "splash-screen";
@@ -18,19 +19,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String appBarText = "Radio";
+    String appBarText = AppLocalizations.of(context)!.radio;
     switch (selectedIndex) {
       case 0:
-        appBarText = "Radio";
+        appBarText = AppLocalizations.of(context)!.radio;
         break;
       case 1:
-        appBarText = "Tasbeeh";
+        appBarText = AppLocalizations.of(context)!.sebha;
         break;
       case 2:
-        appBarText = "Hadith";
+        appBarText = AppLocalizations.of(context)!.hadith;
         break;
       case 3:
-        appBarText = "Quran";
+        appBarText = AppLocalizations.of(context)!.quran;
         break;
     }
     List<Widget> screens = const [
@@ -58,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
             canvasColor: Theme.of(context).primaryColor,
           ),
           child: buildCustomNavigationBar(
+            context: context,
             selectedIndex: selectedIndex,
             onTapFunction: (index) {
               selectedIndex = index;

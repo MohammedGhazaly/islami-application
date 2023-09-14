@@ -3,6 +3,7 @@ import 'package:islami_app/asset_data.dart';
 import 'package:islami_app/models/sura_details.dart';
 import 'package:islami_app/screens/quran/sura_name_widget.dart';
 import 'package:islami_app/screens/quran/sura_verses_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranScreen extends StatelessWidget {
   const QuranScreen({super.key});
@@ -19,7 +20,7 @@ class QuranScreen extends StatelessWidget {
             thickness: 3,
           ),
           Text(
-            "Sura Name",
+            AppLocalizations.of(context)!.sura_name,
             style: Theme.of(context).textTheme.bodySmall,
           ),
           Divider(

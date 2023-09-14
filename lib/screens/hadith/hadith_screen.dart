@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:islami_app/models/hadith_details.dart';
 import 'package:islami_app/screens/hadith/hadith_content_screen.dart';
 import 'package:islami_app/screens/hadith/hadith_name_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadithScreen extends StatefulWidget {
   const HadithScreen({super.key});
@@ -31,7 +32,7 @@ class _HadithScreenState extends State<HadithScreen> {
             thickness: 3,
           ),
           Text(
-            "Hadith Number",
+            AppLocalizations.of(context)!.hadith_number,
             style: Theme.of(context).textTheme.bodySmall,
           ),
           Divider(

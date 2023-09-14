@@ -1,31 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 BottomNavigationBar buildCustomNavigationBar(
-    {required int selectedIndex, required Function(int) onTapFunction}) {
+    {required int selectedIndex,
+    required Function(int) onTapFunction,
+    required BuildContext context}) {
   return BottomNavigationBar(
     currentIndex: selectedIndex,
     onTap: onTapFunction,
-    items: const [
+    items: [
       BottomNavigationBarItem(
-          icon: ImageIcon(
+          icon: const ImageIcon(
             AssetImage("assets/images/radio.png"),
           ),
-          label: "Radio"),
+          label: AppLocalizations.of(context)!.radio),
       BottomNavigationBarItem(
-          icon: ImageIcon(
+          icon: const ImageIcon(
             AssetImage("assets/images/sebha.png"),
           ),
-          label: "Tasbeeh"),
+          label: AppLocalizations.of(context)!.sebha),
       BottomNavigationBarItem(
-          icon: ImageIcon(
+          icon: const ImageIcon(
             AssetImage("assets/images/hadith.png"),
           ),
-          label: "Hadith"),
+          label: AppLocalizations.of(context)!.hadith),
       BottomNavigationBarItem(
-          icon: ImageIcon(
+          icon: const ImageIcon(
             AssetImage("assets/images/moshaf.png"),
           ),
-          label: "Quran"),
+          label: AppLocalizations.of(context)!.quran),
     ],
   );
 }

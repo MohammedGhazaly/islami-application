@@ -3,6 +3,7 @@ import 'package:islami_app/screens/hadith/hadith_content_screen.dart';
 import 'package:islami_app/screens/home/home_screen.dart';
 import 'package:islami_app/screens/quran/sura_verses_screen.dart';
 import 'package:islami_app/themes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: AppThemes.lightTheme,
       initialRoute: HomeScreen.routeName,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale("ar"),
       routes: {
         HomeScreen.routeName: (context) => const HomeScreen(),
         SuraVerses.routeName: (context) => const SuraVerses(),
