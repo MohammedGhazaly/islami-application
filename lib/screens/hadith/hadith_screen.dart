@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/models/hadith_details.dart';
+import 'package:islami_app/screens/hadith/hadith_content_screen.dart';
 import 'package:islami_app/screens/hadith/hadith_name_item.dart';
 
 class HadithScreen extends StatefulWidget {
@@ -60,8 +61,12 @@ class _HadithScreenState extends State<HadithScreen> {
                     itemCount: hadithsListFinal.length,
                     itemBuilder: (context, index) {
                       return HadithNameItem(
-                        suraName: hadithsListFinal[index].title,
-                        onTapFunction: () {},
+                        hadithNumber: hadithsListFinal[index].title,
+                        onTapFunction: () {
+                          Navigator.pushNamed(
+                              context, HadithContentScreen.routeName,
+                              arguments: hadithsListFinal[index]);
+                        },
                       );
                     },
                   ),
@@ -75,12 +80,14 @@ class _HadithScreenState extends State<HadithScreen> {
     String hadiths = await rootBundle.loadString("assets/hadith/ahadith.txt");
     List<String> hadithsList = hadiths.split("#\r\n");
 
-    hadithsList.forEach((hadith) {
-      List<String> hadithLines = hadith.split("\n");
+    for (int i = 0; i < hadithsList.length; i++) {
+      List<String> hadithLines = hadithsList[i].split("\n");
+      print(hadithLines[2]);
       String title = hadithLines[0];
       hadithLines.removeAt(0);
       hadithsListFinal.add(Hadith(title: title, content: hadithLines));
-    });
+    }
+
     setState(() {});
   }
 }
