@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/screens/tasbeeh/rotated_sebha_body_widget.dart';
-import 'package:islami_app/screens/tasbeeh/rotated_sebha_full_widget.dart';
 import 'package:islami_app/screens/tasbeeh/tasbeeh_number_widget.dart';
 import 'package:islami_app/screens/tasbeeh/tasbeeh_phase.dart';
 
