@@ -46,9 +46,10 @@ class ThemeSection extends StatelessWidget {
     BuildContext context,
   ) {
     showModalBottomSheet(
-        context: context,
-        builder: (ctx) {
-          return const ThemeBottomSheet();
-        });
+      context: context,
+      builder: (ctx) {
+        return const ThemeBottomSheet();
+      },
+    );
   }
 }

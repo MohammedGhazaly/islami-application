@@ -6,6 +6,8 @@ BottomNavigationBar buildCustomNavigationBar(
     required Function(int) onTapFunction,
     required BuildContext context}) {
   return BottomNavigationBar(
+    type: BottomNavigationBarType.fixed,
+    showUnselectedLabels: false,
     currentIndex: selectedIndex,
     onTap: onTapFunction,
     items: [
