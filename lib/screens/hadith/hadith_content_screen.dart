@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/models/hadith_details.dart';
+import 'package:islami_app/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadithContentScreen extends StatelessWidget {
   static String routeName = "hadith-content-screen";
@@ -8,13 +10,16 @@ class HadithContentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    var appConfig = Provider.of<AppConfigProvider>(context);
 
     var hadithDetails = ModalRoute.of(context)!.settings.arguments as Hadith;
     return Container(
       constraints: const BoxConstraints.expand(),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/main_bg.png"),
+          image: AssetImage(appConfig.isDarkTheme()
+              ? "assets/images/main_bg_dark.png"
+              : "assets/images/main_bg.png"),
           fit: BoxFit.cover,
         ),
       ),
@@ -30,7 +35,9 @@ class HadithContentScreen extends StatelessWidget {
               horizontal: size.width * 0.05, vertical: size.height * 0.05),
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: appConfig.isDarkTheme()
+                ? Theme.of(context).primaryColorDark
+                : Colors.white,
             borderRadius: BorderRadius.circular(
               25,
             ),

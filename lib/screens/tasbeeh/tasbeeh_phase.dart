@@ -19,8 +19,10 @@ class TasbeehPhaseWidget extends StatelessWidget {
       ),
       child: Text(
         tasbeehPhase,
-        style:
-            Theme.of(context).textTheme.bodySmall!.copyWith(color: kWhiteColor),
+        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              // في حالة الدارك هنخليها كده
+              color: kDarkColor,
+            ),
       ),
     );
   }

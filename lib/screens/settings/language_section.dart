@@ -36,7 +36,11 @@ class LanguageSection extends StatelessWidget {
                   appConfig.appLanguage == "en"
                       ? AppLocalizations.of(context)!.english
                       : AppLocalizations.of(context)!.arabic,
-                  style: Theme.of(context).textTheme.titleSmall,
+                  style: appConfig.isDarkTheme()
+                      ? Theme.of(context).textTheme.titleSmall!.copyWith(
+                            color: Theme.of(context).primaryColorDark,
+                          )
+                      : Theme.of(context).textTheme.titleSmall,
                 ),
                 const Icon(Icons.arrow_drop_down)
               ],

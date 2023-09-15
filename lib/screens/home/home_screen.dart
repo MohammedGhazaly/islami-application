@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/providers/app_config_provider.dart';
 import 'package:islami_app/screens/hadith/hadith_screen.dart';
 import 'package:islami_app/screens/home/custom_navigation_bar.dart';
 import 'package:islami_app/screens/quran/quran_screen.dart';
@@ -6,6 +7,7 @@ import 'package:islami_app/screens/radio/radio_screen.dart';
 import 'package:islami_app/screens/settings/settings_screen.dart';
 import 'package:islami_app/screens/tasbeeh/tasbeeh_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName = "splash-screen";
@@ -20,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var appConfig = Provider.of<AppConfigProvider>(context);
     String appBarText = AppLocalizations.of(context)!.radio;
     switch (selectedIndex) {
       case 0:
@@ -47,9 +50,13 @@ class _HomeScreenState extends State<HomeScreen> {
     ];
     return Container(
       constraints: const BoxConstraints.expand(),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
+        //"assets/images/main_bg.png"
         image: DecorationImage(
-            image: AssetImage("assets/images/main_bg.png"), fit: BoxFit.cover),
+            image: AssetImage(appConfig.isDarkTheme()
+                ? "assets/images/main_bg_dark.png"
+                : "assets/images/main_bg.png"),
+            fit: BoxFit.cover),
       ),
       child: Scaffold(
         appBar: AppBar(

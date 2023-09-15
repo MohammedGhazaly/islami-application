@@ -47,13 +47,15 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
           //   },
           // ),
           createAnimatedSebhaBody(
-              turns: turns,
-              onTapFunction: () {
-                setState(() {
-                  tasbeehNumber++;
-                  turns += 1 / 33;
-                });
-              }),
+            context: context,
+            turns: turns,
+            onTapFunction: () {
+              setState(() {
+                tasbeehNumber++;
+                turns += 1 / 33;
+              });
+            },
+          ),
           const Spacer(
             flex: 1,
           ),

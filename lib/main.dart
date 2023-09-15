@@ -14,7 +14,10 @@ void main() async {
     ChangeNotifierProvider<AppConfigProvider>(
       child: const MyApp(),
       create: (context) {
-        return AppConfigProvider(appLanguage: "en");
+        return AppConfigProvider(
+          appLanguage: "en",
+          themeMode: ThemeMode.dark,
+        );
       },
     ),
   );
@@ -31,9 +34,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppThemes.lightTheme,
+      darkTheme: AppThemes.darkTheme,
       initialRoute: HomeScreen.routeName,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      themeMode: appConfig.themeMode,
       locale: Locale(appConfig.appLanguage),
       routes: {
         HomeScreen.routeName: (context) => const HomeScreen(),
