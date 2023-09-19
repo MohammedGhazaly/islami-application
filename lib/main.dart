@@ -14,10 +14,7 @@ void main() async {
     ChangeNotifierProvider<AppConfigProvider>(
       child: const MyApp(),
       create: (context) {
-        return AppConfigProvider(
-          appLanguage: "en",
-          themeMode: ThemeMode.dark,
-        );
+        return AppConfigProvider();
       },
     ),
   );
@@ -38,7 +35,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.routeName,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      themeMode: appConfig.themeMode,
+      themeMode: appConfig.isDarkTheme() ? ThemeMode.dark : ThemeMode.light,
       locale: Locale(appConfig.appLanguage),
       routes: {
         HomeScreen.routeName: (context) => const HomeScreen(),
