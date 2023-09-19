@@ -11,6 +11,7 @@ This is the first project from The Flutter Diploma i'm currently taking with [Ro
 6. Themeing
 7. How to implement Light an Dark Mode
 8. Structuring the app for more cleaner code
+9. Using SharedPreferences  with Provider to store changes.
 
 #### Screens
 ![Alt text](1.png)
